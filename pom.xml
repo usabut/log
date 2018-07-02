@@ -32,7 +32,7 @@
       <version>1.7.25</version>
     </dependency>-->
 
-   <!-- <dependency>
+ <!--   <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>1.7.25</version>
@@ -56,6 +56,23 @@
       <version>1.2.3</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>1.7.25</version>
+    </dependency>
 
     <!-- commons-loggin&log4j -->
     <dependency>
@@ -75,6 +92,23 @@
       <artifactId>log4j-core</artifactId>
       <version>2.11.0</version>
     </dependency>
+
+  <!--  <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>2.11.0</version>
+    </dependency>-->
+
+    <!--
+    Use of the Log4j 2 SLF4J Binding (log4j-slf4j-impl-2.0.jar) together with the SLF4J adapter (log4j-to-slf4j-2.0.jar)
+    should never be attempted, as it will cause events to endlessly be routed between SLF4J and Log4j 2.
+    -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-to-slf4j</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+
 
    <!-- <dependency>
       <groupId>org.apache.logging.log4j</groupId>

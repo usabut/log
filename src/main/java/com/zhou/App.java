@@ -4,6 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.logging.log4j.LogManager;
 import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 public class App {
 
     public static void main(String[] args) throws Exception{
-        slf4jLog();
+        log4j2Log();
     }
     //slf4j
     //+slf4j-jdk14
@@ -60,9 +61,11 @@ public class App {
         Logger LOGGER = Logger.getLogger(App.class.getName());
         Handler console = new ConsoleHandler();
         Handler file = new FileHandler("jdklog");
+        Handler slf4jBridgeHandle = new SLF4JBridgeHandler();
 //        console.setLevel(Level.SEVERE);
 //        LOGGER.addHandler(console);
         LOGGER.addHandler(file);
+        LOGGER.addHandler(slf4jBridgeHandle);
         // LOGGER.setLevel(Level.INFO);
         LOGGER.finest("finest");
         LOGGER.finer("finer");
