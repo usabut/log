@@ -15,9 +15,24 @@ import java.util.logging.Logger;
  * Hello world!
  */
 public class App {
-
+    private  static org.slf4j.Logger slf4jLogger = LoggerFactory.getLogger(App.class);
     public static void main(String[] args) throws Exception{
-        log4j2Log();
+        for (int i = 0; i < 5; i++) {
+            new Thread(){
+                @Override
+                public void run() {
+                    log(Thread.currentThread().getName() + "-myApp Log..");
+                }
+            }.start();
+        }
+
+    }
+
+    public static void log(String msg) {
+        for (int i = 0; i < 100000; i++) {
+            slf4jLogger.info(msg);
+        }
+
     }
     //slf4j
     //+slf4j-jdk14
